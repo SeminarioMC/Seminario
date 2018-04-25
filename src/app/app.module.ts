@@ -9,6 +9,7 @@ import { SideBarComponent } from './component/side-bar/side-bar.component';
 import { BodyComponent } from './component/body/body.component';
 import { SideSponsorComponent } from './component/side-sponsor/side-sponsor.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { RegisterComponent } from './component/register/register.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FooterComponent } from './component/footer/footer.component';
     SideBarComponent,
     BodyComponent,
     SideSponsorComponent,
-    FooterComponent
+    FooterComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule
