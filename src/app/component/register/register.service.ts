@@ -12,8 +12,9 @@ const httpOptions = {
 
 @Injectable()
 export class RegisterService {
-  //public urlAPI = 'http://backpiscis-backpiscsis.7e14.starter-us-west-2.openshiftapps.com/';
-  public urlAPI = 'http://localhost:8080/';
+  // public urlAPI = 'http://backpiscis-backpiscsis.7e14.starter-us-west-2.openshiftapps.com/';
+  // public urlAPI = 'http://localhost:8080/';
+  public urlAPI = 'http://192.168.31.77:8080/'
   public Ruta = 'in';
 
   constructor(public _httpClient: HttpClient) { }
