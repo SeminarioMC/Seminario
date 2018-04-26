@@ -11,22 +11,26 @@ import {UserModel} from '../../models/user.model';
 export class RegisterComponent implements OnInit {
 
   constructor(public _registerService:RegisterService) { }
-  user:UserModel;
+  public user:UserModel;
   public total=0;
+  public talleres=[];
   ngOnInit() {
     this.dates=[];
     this.obtenerTalleres();
+
   }
 
   AgregarUser(){
     var aux=new ExtracDataUtils();
 
     this.user=<UserModel> aux.extrac(document);
-    console.log(this.user)
+    this.user.talleres=this.talleres;
+
     this.guardarInscripcion(this.user);
 
   }
   public dates;
+
   public guardarInscripcion(inscripcion:UserModel) {
     this._registerService.guardarIns(inscripcion)
       .subscribe({
@@ -61,7 +65,22 @@ export class RegisterComponent implements OnInit {
   }
 
   public variarCosto(value,data) {
-    if (value == true) this.total = this.total + 10;
-    else this.total=this.total-10;
+    if (value == true) {
+      this.total = this.total + 10;
+      this.agregarTaller(data["_id"])
     }
+    else{
+      this.total=this.total-10;
+      this.quitarTallere(data["_id"])
+    }
+    console.log(this.user);
+  }
+
+  public agregarTaller(id){
+   this.talleres.filter(e=>e!=id);
+    this.talleres.push(id);
+  }
+  public quitarTallere(id){
+    this.talleres.filter(e=>e!=id);
+  }
 }
