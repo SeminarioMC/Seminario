@@ -78,7 +78,9 @@ export class RegisterComponent implements OnInit {
   }
 
   public variarCosto(value, data) {
-    if (value === true) {
+
+    if (value == true) {
+
       this.total = this.total + 10;
       this.agregarTaller(data['_id']);
     }
@@ -86,15 +88,17 @@ export class RegisterComponent implements OnInit {
       this.total = this.total - 10;
       this.quitarTallere(data['_id']);
     }
-    console.log(this.user);
+    console.log(this.talleres);
   }
 
+
   public agregarTaller(id) {
-    this.talleres.filter(e => e !== id);
+
+    this.talleres = this.talleres.filter(e => e != id);
     this.talleres.push(id);
   }
 
   public quitarTallere(id) {
-    this.talleres.filter(e => e !== id);
+    this.talleres = this.talleres.filter(e => e != id);
   }
 }
