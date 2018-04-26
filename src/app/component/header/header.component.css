@@ -1,3 +1,16 @@
-.navbar h1{
+.navbar{
+  height: 100%;
+}
+h1,h3{
   color: white;
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+nav{
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#304ad2), to(#f0f0f0));
+  background-image: url("https://3.bp.blogspot.com/-niHlURSrIyY/WQeEtQRIYiI/AAAAAAAA84I/saXXZBeBh8AFsDHQHwb4k-FlCSWSs3baQCLcB/s1600/network-machine-learning-ss-1920.jpg");
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }

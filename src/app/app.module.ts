@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+// rutas
+import { APP_ROUTES} from './app.routes';
 import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './component/header/header.component';
@@ -13,6 +14,17 @@ import { RegisterComponent } from './component/register/register.component';
 import {RegisterService} from './component/register/register.service';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
+import { InicioComponent } from './component/Pages/inicio/inicio.component';
+import { ProgramaComponent } from './component/Pages/programa/programa.component';
+import { LlamamientoComponent } from './component/Pages/llamamiento/llamamiento.component';
+import { EnvioComponent } from './component/Pages/envio/envio.component';
+import { RegistroComponent } from './component/Pages/registro/registro.component';
+import { InvitacionComponent } from './component/Pages/invitacion/invitacion.component';
+import { FechasComponent } from './component/Pages/fechas/fechas.component';
+import { ComiteComponent } from './component/Pages/comite/comite.component';
+import { LugarComponent } from './component/Pages/lugar/lugar.component';
+import { RevisoresComponent } from './component/Pages/revisores/revisores.component';
+import { NopageComponent } from './component/nopage/nopage.component';
 
 
 @NgModule({
@@ -23,11 +35,23 @@ import {HttpModule} from '@angular/http';
     BodyComponent,
     SideSponsorComponent,
     FooterComponent,
-    RegisterComponent
+    RegisterComponent,
+    InicioComponent,
+    ProgramaComponent,
+    LlamamientoComponent,
+    EnvioComponent,
+    RegistroComponent,
+    InvitacionComponent,
+    FechasComponent,
+    ComiteComponent,
+    LugarComponent,
+    RevisoresComponent,
+    NopageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    APP_ROUTES
   ],
   providers: [
     HttpClient,
