@@ -12,8 +12,10 @@ export class RegisterComponent implements OnInit {
 
   constructor(public _registerService:RegisterService) { }
   user:UserModel;
-
+  public total=0;
   ngOnInit() {
+    this.dates=[];
+    this.obtenerTalleres();
   }
 
   AgregarUser(){
@@ -22,7 +24,9 @@ export class RegisterComponent implements OnInit {
     this.user=<UserModel> aux.extrac(document);
     console.log(this.user)
     this.guardarInscripcion(this.user);
+
   }
+  public dates;
   public guardarInscripcion(inscripcion:UserModel) {
     this._registerService.guardarIns(inscripcion)
       .subscribe({
@@ -33,8 +37,31 @@ export class RegisterComponent implements OnInit {
           console.error('Error!:', err);
         },
         complete: () => {
+         }
+      });
+  }
+  public obtenerTalleres() {
+    this._registerService.obtenerTalleres()
+      .subscribe({
+        next: (data) => {
+          this.dates=data;
+          console.log('Datos Enviados:', data);
+        },
+        error: (err) => {
+          console.error('Error!:', err);
+        },
+        complete: () => {
           console.log('Guardar Datos OK.');
+          var k=0;
+          for(let x of this.dates){
+            x["n"]="T"+k++;
+          }
         }
       });
   }
+
+  public variarCosto(value,data) {
+    if (value == true) this.total = this.total + 10;
+    else this.total=this.total-10;
+    }
 }

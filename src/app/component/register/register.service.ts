@@ -26,4 +26,7 @@ export class RegisterService {
     return this._httpClient.post(this.urlAPI + this.Ruta, newIns, httpOptions);
   }
 
+  public obtenerTalleres(){
+    return this._httpClient.get(this.urlAPI+"taller",httpOptions);
+  }
 }

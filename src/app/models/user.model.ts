@@ -3,4 +3,12 @@ export interface UserModel {
   nombre:string;
   apellidos:string;
   correo:string;
+  talleres:string[];
+}
+export interface Taller{
+  id:string,
+  taller:string,
+  horario:string,
+  nombre:string,
+  costo:string
 }
