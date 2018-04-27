@@ -1,66 +1,83 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row centered-form">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <form id="formRegister" class="form" #forma="ngForm">
-            <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                  <input type="text" id="dni" class="form-control input-sm data" placeholder="DNI"
-                         [(ngModel)]="inscripcion.dni" name="dni">
-                </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form id="formRegister" class="form" #forma="ngForm" (ngSubmit)="AgregarUser()">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div class="form-group">
+                <input type="text" id="dni" class="form-control input-sm data" placeholder="DNI" required
+                       [(ngModel)]="inscripcion.dni" name="dni"
+                       pattern="[0-9]{8}">
               </div>
+            </div>
 
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <input type="text" id="first_name" class="form-control input-sm data" placeholder="First Name"
-                         [(ngModel)]="inscripcion.name" name="name">
-                </div>
-              </div>
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <input type="text" id="last_name" class="form-control input-sm data" placeholder="Last Name"
-                         [(ngModel)]="inscripcion.apellidos" name="apellidos">
-                </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div class="form-group">
+                <input type="text" id="nombre" class="form-control input-sm data" placeholder="Nombres" required
+                       [(ngModel)]="inscripcion.nombre" name="nombre"
+                       pattern="[a-zA-Z ]{2,48}">
               </div>
             </div>
-            <div class="form-group">
-              <input type="email" id="email" class="form-control input-sm data" placeholder="Email Address"
-                     [(ngModel)]="inscripcion.correo" name="correo">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div class="form-group">
+                <input type="text" id="apellidos" class="form-control input-sm data" placeholder="Apellidos" required
+                       [(ngModel)]="inscripcion.apellidos" name="apellidos"
+                       pattern="[a-zA-Z ]{2,48}">
+              </div>
             </div>
-            <div class="col-lg-12">
-              <table class="table">
-                <thead>
-                <tr>
-                  <th>Inscripcion</th>
-                  <th>Taller</th>
-                  <th>Horario</th>
-                  <th>Nombre</th>
-                  <th>Costo</th>
-                </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let data of dates">
-                    <td>
-                      <div class="form-check">
-                        <input (change)="variarCosto($event.currentTarget.checked,data)" class="form-check-input" type="checkbox" value="" id="defaultCheck1"
-                               [(ngModel)]="inscripcion.talleres" name="talleres">
-                      </div>
-                    </td>
-                    <td>{{data["n"]}}</td>
-                    <td>{{data["horario"]}}</td>
-                    <td>{{data["nombre"]}}</td>
-                    <td>S/. 10</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div class="form-group">
+                <input type="email" id="correo" class="form-control input-sm data" placeholder="Correo Electrónico" required
+                       [(ngModel)]="inscripcion.correo" name="correo"
+                       pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+              </div>
             </div>
-            <div class="col-lg-4 float-right">
-              total S/.{{total}}
-            </div>
-            <button (click)="AgregarUser()" class="btn btn-success btn-block">Register</button>
-          </form>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <table class="table">
+              <thead>
+              <tr>
+                <th>Inscripcion</th>
+                <th>Taller</th>
+                <th>Horario</th>
+                <th>Nombre</th>
+                <th>Ambiente</th>
+                <th>Costo</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let data of dates">
+                <td>
+                  <div class="form-check">
+                    <input (change)="variarCosto($event.currentTarget.checked,data)"
+                           class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                  </div>
+                </td>
+                <td>{{data["n"]}}</td>
+                <td>{{data["horario"]}}</td>
+                <td>{{data["nombre"]}}</td>
+                <td>{{data["ambiente"]}}</td>
+                <td>S/. {{data["costo"]}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-lg-4 float-right text-center">
+            Total S/.{{total}}
+          </div>
+          <hr>
+          <button [disabled]="!forma.valid" (click)="mensaje()" class="btn btn-success btn-block">Registrarse</button>
+        </form>
+        <div  [hidden]="flag"
+              class="alert alert-success" role="alert">
+          Se registro correctamente.
         </div>
+        <!--{{ forma.valid }}-->
       </div>
+    </div>
   </div>
 </div>
+
+

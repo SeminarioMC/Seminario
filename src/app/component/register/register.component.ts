@@ -9,7 +9,7 @@ import {UserModel} from '../../models/user.model';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  flag = true;
   inscripcion: UserModel = {
     dni: '',
     nombre: '',
@@ -30,6 +30,12 @@ export class RegisterComponent implements OnInit {
     this.obtenerTalleres();
 
   }
+
+  mensaje() {
+    this.flag = false;
+    setTimeout(window.location.reload(), 1000);
+  }
+
 
   AgregarUser() {
     const aux = new ExtracDataUtils();

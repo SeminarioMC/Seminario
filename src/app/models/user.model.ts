@@ -10,5 +10,6 @@ export interface Taller{
   taller:string,
   horario:string,
   nombre:string,
+  ambiente:string,
   costo:string
 }
