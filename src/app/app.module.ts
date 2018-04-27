@@ -13,6 +13,9 @@ import { FooterComponent } from './component/footer/footer.component';
 import { RegisterComponent } from './component/register/register.component';
 import {RegisterService} from './component/register/register.service';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+
+
+import { FormsModule } from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import { InicioComponent } from './component/Pages/inicio/inicio.component';
 import { ProgramaComponent } from './component/Pages/programa/programa.component';
@@ -51,6 +54,7 @@ import { NopageComponent } from './component/nopage/nopage.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     APP_ROUTES
   ],
   providers: [
