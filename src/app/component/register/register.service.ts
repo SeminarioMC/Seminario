@@ -24,8 +24,8 @@ export class RegisterService {
   // }
 
   public guardarIns(newIns: UserModel) {
+    console.log(newIns);
     return this._httpClient.post(this.urlAPI + this.Ruta, newIns, httpOptions);
-    console.log(JSON.stringify(newIns));
   }
 
   public obtenerTalleres() {

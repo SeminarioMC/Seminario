@@ -33,7 +33,6 @@ export class RegisterComponent implements OnInit {
 
   mensaje() {
     this.flag = false;
-    setTimeout(window.location.reload(), 1000);
   }
 
 
@@ -59,6 +58,7 @@ export class RegisterComponent implements OnInit {
           console.error('Error!:', err);
         },
         complete: () => {
+          setTimeout(window.location.reload(), 3000);
         }
       });
   }
