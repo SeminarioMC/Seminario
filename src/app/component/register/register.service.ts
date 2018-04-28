@@ -12,7 +12,7 @@ const httpOptions = {
 
 @Injectable()
 export class RegisterService {
-  public urlAPI = 'http://seminario-seminario.7e14.starter-us-west-2.openshiftapps.com/';
+  public urlAPI = 'https://seminario-seminario.7e14.starter-us-west-2.openshiftapps.com/';
   // public urlAPI = 'http://localhost:8080/';
   public Ruta = 'in';
 
@@ -25,6 +25,7 @@ export class RegisterService {
 
   public guardarIns(newIns: UserModel) {
     return this._httpClient.post(this.urlAPI + this.Ruta, newIns, httpOptions);
+    console.log(JSON.stringify(newIns));
   }
 
   public obtenerTalleres() {
