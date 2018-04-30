@@ -35,6 +35,9 @@ export class RegisterComponent implements OnInit {
     this.flag = false;
   }
 
+  report() {
+    console.log('Necesitamos imprimir');
+  }
 
   AgregarUser() {
     const aux = new ExtracDataUtils();
@@ -58,7 +61,7 @@ export class RegisterComponent implements OnInit {
           console.error('Error!:', err);
         },
         complete: () => {
-          setTimeout(window.location.reload(), 3000);
+          // setTimeout(window.location.reload(), 3000);
         }
       });
   }

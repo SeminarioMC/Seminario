@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row centered-form">
-    <div class="panel panel-default">
+    <div class="panel panel-default col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
       <div class="panel-body">
         <form id="formRegister" class="form" #forma="ngForm" (ngSubmit)="AgregarUser()">
           <div class="row">
@@ -35,45 +35,49 @@
             </div>
           </div>
 
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <table class="table">
-              <thead>
-              <tr>
-                <th>Inscripcion</th>
-                <th>Taller</th>
-                <th>Horario</th>
-                <th>Nombre</th>
-                <th>Ambiente</th>
-                <th>Costo</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr *ngFor="let data of dates">
-                <td>
-                  <div class="form-check">
-                    <input (change)="variarCosto($event.currentTarget.checked,data)"
-                           class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                  </div>
-                </td>
-                <td>{{data["n"]}}</td>
-                <td>{{data["horario"]}}</td>
-                <td>{{data["nombre"]}}</td>
-                <td>{{data["ambiente"]}}</td>
-                <td>S/. {{data["costo"]}}</td>
-              </tr>
-              </tbody>
-            </table>
+          <div class="container-fluid">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th>Inscripcion</th>
+                  <th>Taller</th>
+                  <th>Horario</th>
+                  <th>Nombre</th>
+                  <th>Ambiente</th>
+                  <th>Costo</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let data of dates">
+                  <td>
+                    <div class="form-check">
+                      <input (change)="variarCosto($event.currentTarget.checked,data)"
+                             class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    </div>
+                  </td>
+                  <td>{{data["n"]}}</td>
+                  <td>{{data["horario"]}}</td>
+                  <td>{{data["nombre"]}}</td>
+                  <td>{{data["ambiente"]}}</td>
+                  <td>S/. {{data["costo"]}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
           <div class="col-lg-4 float-right text-center">
-            Total S/.{{total}}
+            Total: S/.{{total}}
           </div>
+          <br>
           <hr>
-          <button [disabled]="!forma.valid" (click)="mensaje()" class="btn btn-success btn-block">Registrarse</button>
+          <button *ngIf="flag" [disabled]="!forma.valid" (click)="mensaje()" class="btn btn-success btn-block">Registrarse</button>
         </form>
         <div  [hidden]="flag"
               class="alert alert-success" role="alert">
           Se registro correctamente.
         </div>
+        <button *ngIf="!flag" (click)="report()" class="btn btn-info btn-block">Imprimir</button>
         <!--{{ forma.valid }}-->
       </div>
     </div>
