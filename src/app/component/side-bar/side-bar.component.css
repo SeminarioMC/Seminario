@@ -12,7 +12,5 @@ a{
 }
 li:hover{
   background-color: #dc3545;
-}
-li:hover a{
   color: white;
 }
