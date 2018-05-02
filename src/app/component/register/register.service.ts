@@ -31,4 +31,8 @@ export class RegisterService {
   public obtenerTalleres() {
     return this._httpClient.get(this.urlAPI + 'taller', httpOptions);
   }
+
+  public obtenerdni(dni: string) {
+    return this._httpClient.get(this.urlAPI + this.Ruta + '/' + dni, httpOptions);
+  }
 }

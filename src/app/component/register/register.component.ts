@@ -18,6 +18,9 @@ export class RegisterComponent implements OnInit {
     talleres: null
   };
 
+  public dates;
+  public recibidos;
+
   constructor(public _registerService: RegisterService) {
   }
 
@@ -35,8 +38,23 @@ export class RegisterComponent implements OnInit {
     this.flag = false;
   }
 
-  report() {
-    console.log('Necesitamos imprimir');
+  report(dni: string) {
+    console.log('el dni es', dni);
+    this._registerService.obtenerdni(dni)
+      .subscribe({
+        next: (data) => {
+          this.recibidos = data;
+          console.log('Datos de consulta recibidos:', data);
+        },
+        error: (err) => {
+          console.error('Error en consulta!:', err);
+          alert(err);
+        },
+        complete: () => {
+          console.log('Consulta satisfactoria.');
+        }
+      });
+
   }
 
   AgregarUser() {
@@ -48,8 +66,6 @@ export class RegisterComponent implements OnInit {
     this.guardarInscripcion(this.user);
 
   }
-
-  public dates;
 
   public guardarInscripcion(inscripcion: UserModel) {
     this._registerService.guardarIns(inscripcion)
