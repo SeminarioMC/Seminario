@@ -14,3 +14,11 @@ li:hover{
   background-color: #dc3545;
   color: white;
 }
+.img{
+  border: none;
+  max-height: 250px;
+  max-width: 200px;
+}
+p{
+  font-family: 'Roboto Condensed', sans-serif;
+}
