@@ -14,7 +14,7 @@
 
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
               <div class="form-group">
-                <input type="text" id="nombre" class="form-control input-sm data" placeholder="Nombres" required
+                <input type="text" id="nombre" class="form-control input-sm data" placeholder="Nombres" required style="text-transform: capitalize"
                        [(ngModel)]="inscripcion.nombre" name="nombre"
                        pattern="[a-zA-Z ]{2,48}">
               </div>
@@ -40,12 +40,12 @@
               <table class="table">
                 <thead>
                 <tr>
-                  <th>Inscripcion</th>
+                  <th>Inscripción</th>
                   <th>Taller</th>
                   <th>Horario</th>
                   <th>Nombre</th>
                   <th>Ambiente</th>
-                  <th>Costo</th>
+                  <!--<th>Costo</th>-->
                 </tr>
                 </thead>
                 <tbody>
@@ -61,14 +61,14 @@
                   <td>{{data["horario"]}}</td>
                   <td>{{data["nombre"]}}</td>
                   <td>{{data["ambiente"]}}</td>
-                  <td>S/. {{data["costo"]}}</td>
+                  <!--<td>S/. {{data["costo"]}}</td>-->
                 </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div class="col-lg-4 float-right text-center">
-            Total: S/.{{total}}
+            Total: S/40.00
           </div>
           <br>
           <hr>
