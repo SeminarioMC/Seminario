@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './component/header/header.component';
 import { SideBarComponent } from './component/side-bar/side-bar.component';
-import { BodyComponent } from './component/body/body.component';
 import { SideSponsorComponent } from './component/side-sponsor/side-sponsor.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { RegisterComponent } from './component/register/register.component';
@@ -32,7 +31,6 @@ import { NopageComponent } from './component/nopage/nopage.component';
     AppComponent,
     HeaderComponent,
     SideBarComponent,
-    BodyComponent,
     SideSponsorComponent,
     FooterComponent,
     RegisterComponent,
