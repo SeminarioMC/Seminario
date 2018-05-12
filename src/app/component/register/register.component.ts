@@ -105,11 +105,11 @@ export class RegisterComponent implements OnInit {
           doc.setFontType('italic');
 
           doc.text(40, 90, 'DNI: ' + this.recibidos.dni);
-          doc.text(40, 100, 'Nombre: ' + this.recibidos.nombre);
-          doc.text(40, 110, 'Apellidos: ' + this.recibidos.apellidos);
+          doc.text(40, 100, 'Nombre: ' + this.recibidos.nombre.toUpperCase());
+          doc.text(40, 110, 'Apellidos: ' + this.recibidos.apellidos.toUpperCase());
           doc.text(40, 120, 'Correo: ' + this.recibidos.correo);
 
-          //doc.text(15,130,'Con esta inscripción usted podra asistir a los laboratorios de');
+          // doc.text(15,130,'Con esta inscripción usted podra asistir a los laboratorios de');
           doc.save('reporte.pdf');
 
         },
@@ -162,7 +162,7 @@ export class RegisterComponent implements OnInit {
         },
         complete: () => {
           console.log('Guardar Datos OK.');
-          let k = 0;
+          let k = 1;
           for (const x of this.dates) {
             x['n'] = 'T' + k++;
           }

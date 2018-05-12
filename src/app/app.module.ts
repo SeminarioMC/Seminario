@@ -24,6 +24,7 @@ import { InvitacionComponent } from './component/Pages/invitacion/invitacion.com
 import { ComiteComponent } from './component/Pages/comite/comite.component';
 import { LugarComponent } from './component/Pages/lugar/lugar.component';
 import { NopageComponent } from './component/nopage/nopage.component';
+import { TallerComponent } from './component/Pages/taller/taller.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { NopageComponent } from './component/nopage/nopage.component';
     InvitacionComponent,
     ComiteComponent,
     LugarComponent,
-    NopageComponent
+    NopageComponent,
+    TallerComponent
   ],
   imports: [
     BrowserModule,

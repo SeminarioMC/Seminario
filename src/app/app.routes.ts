@@ -8,11 +8,13 @@ import {InvitacionComponent} from './component/Pages/invitacion/invitacion.compo
 import {ComiteComponent} from './component/Pages/comite/comite.component';
 import {LugarComponent} from './component/Pages/lugar/lugar.component';
 import {NopageComponent} from './component/nopage/nopage.component';
+import {TallerComponent} from './component/Pages/taller/taller.component';
 
 
 const appRoutes: Routes = [
   {path: 'inicio', component: InicioComponent},
   {path: 'programa', component: ProgramaComponent},
+  {path: 'taller', component: TallerComponent},
   {path: 'llamamiento', component: LlamamientoComponent},
   {path: 'registro', component: RegistroComponent},
   {path: 'invitacion', component: InvitacionComponent},
